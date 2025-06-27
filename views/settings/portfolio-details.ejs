@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>myPortFolio setting</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  
+  <!-- Favicons -->
+  <link href="/img/logoicon.png" rel="icon">
+  <link href="/img/logoicon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/edit.css" rel="stylesheet">
+
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="<%=bd.primage%>" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="<%=url%>" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="/img/logo.png" alt=""> -->
+      <h1 class="sitename"><%=bd.name%></h1>
+    </a>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero"><i class="bi bi-house navicon"></i>Basic Details</a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="#portfolio"><i class="bi bi-images navicon"></i>Gallary</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Portfolio Details</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Portfolio Details</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- ..................................Basic Data Edit section.......................................... -->
+    <!-- Hero Section -->
+    <section class="hero section dark-background" id="hero">
+
+      <img src="<%=bd.bgimage%>" alt="" data-aos="fade-in" class="">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+<%if(pfd.type=='Project'){%>        
+        <form class="dataform" action="<%=url%>/update/portfolio/data/<%=pfd.id%>" method="post">
+          <label for="category">Category : </label>
+          <input type="text" placeholder="Enter Category" id="category" name="category" value="<%=pfd.category%>" required>
+
+          <label for="client">Client : </label>
+          <input type="text" placeholder="Enter Your Client " id="client" name="client" value="<%=pfd.client%>" required>
+
+          <label for="date">Project Date : </label>
+          <input type="text" placeholder="formate= dd-monthName,year" id="date" name="projectdate" value="<%=pfd.projectdate%>" required>
+
+          <label for="url">Project Url : </label>
+          <input type="text" placeholder="Enter Project url" id="url" name="projecturl" value="<%=pfd.projecturl%>" required>
+
+          <div class="btn"><button type="submit">Submit</button></div>
+
+        </form>
+<%}%>
+<%if(pfd.type!='Project'){%>        
+        <form class="dataform" action="<%=url%>/update/portfolio/data/<%=pfd.id%>" method="post">
+          <label for="category">Name : </label>
+          <input type="text" placeholder="Enter Category" id="category" name="category" value="<%=pfd.category%>" required>
+
+          <label for="client">Company : </label>
+          <input type="text" placeholder="Enter Your Client " id="client" name="client" value="<%=pfd.client%>" required>
+
+          <label for="date">Start Date : </label>
+          <input type="text" placeholder="formate= dd-monthName,year" id="date" name="projectdate" value="<%=pfd.projectdate%>" required>
+
+          <label for="url">End Date : </label>
+          <input type="text" placeholder="Enter Project url" id="url" name="projecturl" value="<%=pfd.projecturl%>" required>
+
+          <div class="btn"><button type="submit">Submit</button></div>
+
+        </form>
+<%}%>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+
+    <!-- ........................................edit about section data ................................. -->
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-8 content">
+
+            <form class="dataform" action="<%=url%>/update/portfolio/data/<%=pfd.id%>" method="post">
+              
+              <div class="col-lg-6 dataformcon">
+                <label for="aboutproject">About Project&nbsp;:</label>
+                <textarea cols="140" rows="10" id="aboutproject" name="projectbio" required><%=pfd.projectbio%></textarea>
+                <div class="btn"><button type="submit">Submit</button></div>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+            <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Gallary</h2>
+
+        <form class="dataform" action="<%=url%>/upload/project/<%=pfd.id%>" method="post" enctype="multipart/form-data">
+          <label for="pimage">Project Image : </label>
+          <input type="file" id="pimage" name="profilePic" required>
+          <div class="btn"><button type="submit">Submit</button></div>
+        </form>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <div class="row gy-4 isotope-container re-content" data-aos="fade-up" data-aos-delay="200" id="allportfolio">
+
+            <div class="conform" style="height: 80%; display:none;" id="portfolioconformdelete">
+              <p>Are You Sure? Delete SkillName</p>
+              <a class="con"><button type="submit">Yes</button> </a>
+              <a class="con"><button type="cancel">No</button></a>
+            </div>
+<%for(i of pi){%>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <a class="trush deleter "><i class="bi bi-trash3"></i></a>
+                <id style="display: none;"><%=i.id%></id>
+                <form class="trush deleter2 " method="post" action="<%=url%>/update/portfolio/data/<%=i.projectid%>">
+                  <input type="text" name="projectimage" value="<%=i.url%>" style="display:none;">
+                  <button><i class="bi bi-arrow-up-square-fill"></i></button>
+                </form>
+                <img src="<%=i.url%>" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <a href="<%=i.url%>" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+<%}%>
+            <!-- End Portfolio Item -->
+
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/php-email-form/validate.js"></script>
+  <script src="/vendor/aos/aos.js"></script>
+  <script src="/vendor/typed.js/typed.umd.js"></script>
+  <script src="/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="/js/main.js"></script>
+
+</body>
+
+
+  <script>
+
+    let allportfolio=document.getElementById('allportfolio');
+    for(let child of allportfolio.children){
+      try{
+        let p=child.children[0].children;
+        p[0].addEventListener('click',()=>{
+          let id=p[1].innerText;
+          console.log(id);
+          let portfolioconformdelete=document.getElementById('portfolioconformdelete');
+          portfolioconformdelete.innerHTML=`
+            <p>Are You Sure? Delete SkillName</p>
+            <a class="con" href="<%=url%>/myPortFolio/delete/project/${id}"><button type="submit">Yes</button> </a>
+            <a class="con" id="portfoliocencel"><button type="cancel">No</button></a>
+          `;
+          portfolioconformdelete.style.display='flex';
+          let portfoliocencel=document.getElementById('portfoliocencel');
+          portfoliocencel.addEventListener("click",()=>{
+            portfolioconformdelete.style.display="none";
+          });
+        });
+      }
+      catch{
+        console.log("only taken");
+      }
+    }
+
+
+
+  </script>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortFolio Status</title>
+    
+    <!-- Favicons -->
+    <link href="/img/logoicon.png" rel="icon">
+    <link href="/img/logoicon.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" href="/css/err.css">
+</head>
+<body>
+
+<%if(status=='200'){%>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="main">
+      <h1>200</h1>
+      <p>It's looks like Message Sent Successfully...<br/>That's Great! 😊</p>
+      <a href="<%=url%>/myport"><button type="button">Go Back</button></a>
+    </div>
+<%}%>
+<%if(status=='400'){%>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="main">
+      <h1>400</h1>
+      <p>It looks like you're on wrong path...<br/>That's a trouble? 😨</p>
+      <a href="<%=url%>/myport"><button type="button">Go Back</button></a>
+    </div>
+<%}%>
+<%if(status=='401'){%>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="main">
+      <h1>401</h1>
+      <p>It looks like you're Not An Admin...<br/>That's a trouble! 😡</p>
+      <a href="<%=url%>/myport"><button type="button">Go Back</button></a>
+    </div>
+<%}%>
+<%if(status=='404'){%>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="main">
+      <h1>404</h1>
+      <p>It looks like you're lost...<br/>That's a trouble? 😎</p>
+      <a href="<%=url%>/myport"><button type="button">Go Back</button></a>
+    </div>
+<%}%>
+<%if(status=='500'){%>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="main">
+      <h1>500</h1>
+      <p>It's looks like there are server error...<br/>That's a trouble? 😔</p>
+      <a href="<%=url%>/myport"><button type="button">Go Back</button></a>
+    </div>
+<%}%>
+<%if(status=='501'){%>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="main">
+      <h1>501</h1>
+      <p>It's looks like This page not created yet...<br/>That's a trouble? 🚫</p>
+      <a href="<%=url%>/myport"><button type="button">Go Back</button></a>
+    </div>
+<%}%>
+
+</body>
+<script>
+//let id=document.getElementById('getid').textContent;
+//window.setTimeout(()=>{
+//    // console.log(window.location.href);
+//    window.location.replace(`<%=url%>/myport`);
+//},1600);
+</script>
+</html>

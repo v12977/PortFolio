@@ -1,0 +1,152 @@
+:root {
+  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway",  sans-serif;
+  --nav-font: "Poppins",  sans-serif;
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root { 
+  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #050d18; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
+
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+  --nav-color: #a8a9b4;  /* The default color of the main navmenu links */
+  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #040b14; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #040b14; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #a8a9b4; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #ffffff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+
+button[type=download],button[type=submit],button[type=cancel]{
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border: 0;
+  padding: 10px 30px;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+button[type=download]:hover,button[type=submit]:hover,button[type=cancel]:hover{
+  background: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
+
+.shower{
+  display: flex;
+}
+.hider{
+  display: none;
+}
+.dataform{
+  height: auto;
+  widows: 100%;
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.dataform label,input,.btn,.btns,select{
+  height: 2rem;
+  margin: .3rem 0rem;
+  width: 60%;
+}
+.dataform .btns{
+  margin-top: 1rem;
+  width: 100%;
+  height: 2rem;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.dataform label{
+  font-weight: bolder;
+}
+.dataform input{
+  border: 0;
+  color: #040b14b5;
+  border-bottom: 1px solid black;
+  background-color: rgba(255, 255, 255, 0.52);
+  border-radius: 2px;
+}
+.dataform .dataformcon{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.trush{
+  margin: 0rem 1rem;
+}
+.trush i{
+  font-size: larger;
+}
+
+.skills-content .conform{
+  position: absolute;
+  content: "";
+  display: flex;
+  border-radius: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  align-self: center;
+  left:10%;
+  justify-content: center;
+  height: 100%;
+  width: 80%;
+  background-color: var(--nav-dropdown-background-color);
+  color: var(--background-color);
+}
+.skills-content .conform p,.con{
+  height: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.re-content{
+  position: relative;
+}
+.re-content .conform{
+  position: absolute;
+  content: "";
+  display: flex;
+  border-radius: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  align-self: center;
+  left:10%;
+  justify-content: center;
+  height: 50%;
+  z-index: 6;
+  width: 80%;
+  background-color: var(--nav-dropdown-background-color);
+  color: var(--background-color);
+}
+.re-content .conform p,.con{
+  height: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleter{
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  top: 1rem;
+}
+.deleter2{
+  position: absolute;
+  z-index: 5;
+  right: 3rem;
+  top: 1rem;
+}

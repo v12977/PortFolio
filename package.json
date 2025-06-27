@@ -1,0 +1,38 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "run": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/v12977/MyPortFolio.git"
+  },
+  "author": "vikash",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/v12977/MyPortFolio/issues"
+  },
+  "homepage": "https://github.com/v12977/MyPortFolio#readme",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cloudinary": "^2.7.0",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^16.6.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "mongoose": "^8.16.1",
+    "multer": "^2.0.1",
+    "multer-storage-cloudinary": "^4.0.0",
+    "nodemailer": "^7.0.3",
+    "nodemon": "^3.1.10",
+    "path": "^0.12.7",
+    "uuid": "^11.1.0"
+  }
+}

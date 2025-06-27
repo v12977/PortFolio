@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>My-PortFolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/img/logoicon.png" rel="icon">
+  <link href="/img/logoicon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/edit.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="<%=bd.primage%>" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="<%=url%>/starter/page" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="/img/logo.png" alt=""> -->
+      <h1 class="sitename"><%=bd.name%></h1>
+    </a>
+
+    <div class="social-links text-center">
+<% for(let i of ssw){%>
+  <% if(i.type=='website'){%>
+    <% if(i.name=='github'||i.name=='linkedin'||i.name=='linkedin '||i.name=='github '||i.name=="instagram"||i.name=="instagram "||i.name=="twitter"||i.name=="twitter "){%>
+      <a href="<%=i.bio_url%>" class="<%=i.name%>"><i class="bi bi-<%=i.name%>"></i></a>
+    <%}else{%>
+      <a href="<%=i.bio_url%>" class="<%=i.name%>"><i class="bi bi-link-45deg"></i></a>
+    <%}%>
+  <%}%>
+<%}%>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="#skills"><i class="bi bi-file-earmark-code navicon"></i>Skills</a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
+        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+
+        <!-- Dropdown -->
+        <!-- ...........................................................dropdown........................................ -->
+        <!-- Dropdown -->
+
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="<%=bd.bgimage%>" alt="" data-aos="fade-in" class="">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2><%=bd.name%></h2>
+        <p>I'm <span class="typed" data-typed-items="<%=bd.showprofession%>">Designer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p><%=bd.aboutsummary%></p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4">
+            <img src="<%=bd.primage%>" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 content">
+            <h2><%=bd.bstskill%></h2>
+            <p class="fst-italic py-3">
+              <%=bd.skillsummary%>
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>21 September 2003</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span><a href="<%=bd.website%>"><%=bd.website%></a></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span><%=bd.phone%></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span><%=bd.city%></span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>21</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span><%=bd.degree%></bd.degree></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span><%=bd.email%></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Working:</strong> <span><%=bd.workingstatus%></span></li>
+                </ul>
+              </div>
+            </div>
+            <p class="py-3">
+              <%=bd.finalsummary%>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-emoji-smile"></i>
+              <span data-purecounter-start="0" data-purecounter-end="<%=bd.onlineproject%>" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Online Projects</strong> <span></span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-journal-richtext"></i>
+              <span data-purecounter-start="0" data-purecounter-end="<%=bd.totalproject%>" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Total Projects</strong> <span></span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-headset"></i>
+              <span data-purecounter-start="0" data-purecounter-end="<%=bd.singleproject%>" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Single Projects</strong> <span></span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-people"></i>
+              <span data-purecounter-start="0" data-purecounter-end="<%=bd.groupproject%>" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Group Project</strong> <span></span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Skills</h2>
+        <p>My skills and how much i have knowlage about that.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row skills-content skills-animation">
+
+          <div class="col-lg-6">
+<%for(let s of skill){%>
+  <%if(i<=c){%>
+            <div class="progress">
+              <span class="skill"><span><%=s.name%></span> <i class="val"><%=s.bio_url%>% </i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="<%=s.bio_url%>" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+  <%}%>
+  <%i+=1%>
+<%}%>
+<%i=1%>
+          </div>
+
+          <div class="col-lg-6">
+<%for(let s of skill){%>
+  <%if(c<i){%>
+            <div class="progress">
+              <span class="skill"><span><%=s.name%></span> <i class="val"><%=s.bio_url%>% </i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="<%=s.bio_url%>" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+  <%}%>
+  <%i+=1%>
+<%}%>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Skills Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>Motivated and enthusiastic tech learner with hands-on experience in front-end and back-end development. Skilled in HTML, CSS, JavaScript, Bootstrap, Flask, and Express.js, with knowledge of SQL and MongoDB. Passionate about real-world projects and continuous learning.
+To download my resume, click the button below.</p>
+        <a href="/file/resume.pdf" download><button type="download" class="mt-4">Get Resume</button></a>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+            <h3 class="resume-title">Education</h3>
+<% for(r of rd){%>
+  <%if(r.rtype=='Education'){%>
+            <div class="resume-item">
+              <h4><%=r.rname%></h4>
+              <h5><%=r.ryear%></h5>
+              <p><em><%=r.runiversity%></em></p>
+              <p><%=r.rbio%></p>
+            </div>
+  <%}%>
+<%}%>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+<% for(r of rd){%>
+  <%if(r.rtype=='Professional'){%>
+            <div class="resume-item">
+              <h4><%=r.rname%></h4>
+              <h5><%=r.ryear%></h5>
+              <p><em><%=r.runiversity%></em></p>
+              <p><%=r.rbio%></p>
+            </div>
+  <%}%>
+<%}%>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+
+    <!-- Portfolio Section  -->
+    <section id="portfolio" class="portfolio section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Achievements</h2>
+        <p></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">Projects</li>
+            <li data-filter=".filter-product">Achivments</li>
+            <!-- <li data-filter=".filter-branding">Branding</li>
+            <li data-filter=".filter-books">Books</li> -->
+          </ul>
+          <!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+<%for(p of pfd){%>
+  <% if(p.type=='Project'){%>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="<%=p.projectimage%>" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Project</h4>
+                  <p><%=p.name%></p>
+                  <a href="<%=p.projectimage%>" title="Project" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="<%=url%>/portfolio/<%=p.id%>" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+  <%}%>
+<%}%>
+<%for(p of pfd){%>
+  <% if(p.type!='Project'){%>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="<%=p.projectimage%>" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Project</h4>
+                  <p><%=p.name%></p>
+                  <a href="<%=p.projectimage%>" title="Project" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="<%=url%>/portfolio/<%=p.id%>" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+  <%}%>
+<%}%>
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>I provide full stack web development services, including front-end design using HTML, CSS, JavaScript, Bootstrap, and basic React.js to create responsive and interactive user interfaces. On the back end, I work with Flask (Python) and Node.js with Express to build robust server-side applications and RESTful APIs. I also have foundational to intermediate knowledge of databases, including SQL for structured data and MongoDB for NoSQL storage, enabling me to manage and integrate data effectively in web projects.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+<% for(s of ssw){%>
+  <%if(s.type=='service'){%>
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
+            <div>
+              <h4 class="title"><a class="stretched-link"><%=s.name%></a></h4>
+              <p class="description"><%=s.bio_url%></p>
+            </div>
+          </div>
+  <%}%>
+<%}%>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+
+    <!-- Testimonials Section -->
+<!-- ..................................................... Testimonials ................................................. -->
+    <!-- Testimonials Section -->
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Feel free to reach out for collaboration, project inquiries, or any opportunities. I'm always open to connecting and discussing new ideas or tech-related work.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-5">
+
+            <div class="info-wrap">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>Rohini Sector-28, Shahbad Dairy, Delhi-110042</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <p>+91 7065676082</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <p>kishore21092003@gmail.com</p>
+                </div>
+              </div><!-- End Info Item -->
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.4343076161617!2d77.36491367495286!3d28.52666278888147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce619dbaa5e9f%3A0xcc4e49955bfce4bf!2sNoida-Greater%20Noida%20Expy%2C%20Parx%20Laureate%2C%20Sector%20105%2C%20Noida%2C%20Uttar%20Pradesh%20201304!5e0!3m2!1sen!2sin!4v1751014907472!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+            
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <form action="<%=url%>/myportfolio/contact" method="post">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <label for="name-field" class="pb-2">Your Name</label>
+                  <input type="text" name="name" id="name-field" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="number-field" class="pb-2">Your Contect</label>
+                  <input type="text" name="mobile" id="number-field" value="+91 " class="form-control" required>
+                </div>
+      
+                <div class="col-md-12">
+                  <label for="email-field" class="pb-2">Your Email</label>
+                  <input type="email" class="form-control" name="senderemail" id="email-field" required>
+                </div>
+
+                <div class="col-md-12">
+                  <label for="subject-field" class="pb-2">Subject</label>
+                  <input type="text" class="form-control" name="subject" id="subject-field" required>
+                </div>
+
+                <div class="col-md-12">
+                  <label for="message-field" class="pb-2">Message</label>
+                  <textarea class="form-control" name="message" rows="10" id="message-field" required></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Please Wait For AutoLoad After Send Message!</div>
+
+                  <button type="submit" style="margin-top: 1rem;">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/php-email-form/validate.js"></script>
+  <script src="/vendor/aos/aos.js"></script>
+  <script src="/vendor/typed.js/typed.umd.js"></script>
+  <script src="/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="/js/main.js"></script>
+
+</body>
+
+</html>
