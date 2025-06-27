@@ -15,7 +15,7 @@ const { cloudinary, storage } = require('./utils/cloud/cloud.js');
 const upload = multer({ storage }); // use the cloudinary storage
 const MongoStore = require('connect-mongo');
 
-let url='https://myportfolio-hsc7.onrender.com';
+let url="https://portfolio-sg6m.onrender.com";
  
 
 
